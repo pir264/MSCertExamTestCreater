@@ -6,7 +6,7 @@ Generate adaptive multiple-choice practice questions for Microsoft Certification
 ## Trigger
 Run manually at any time:
 ```bash
-python exam_practice.py
+python3 exam_practice.py
 ```
 
 ## Required Inputs
@@ -66,10 +66,25 @@ data/
 
 ## Setup (first time)
 ```bash
+# 1. Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2. Install dependencies
 pip install -r requirements.txt
-cp .env.example .env        # or create .env manually
-# Add your key to .env:
-echo "ANTHROPIC_API_KEY=sk-ant-..." >> .env
+
+# 3. Configure API key
+cp .env.example .env
+# Edit .env and fill in your ANTHROPIC_API_KEY
+```
+
+## Starting the tool
+```bash
+# Activate the virtual environment first (every new terminal session)
+source .venv/bin/activate
+
+# Then run
+python exam_practice.py
 ```
 
 ## Known Constraints
